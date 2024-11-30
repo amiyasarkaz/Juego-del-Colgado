@@ -45,11 +45,38 @@ public class JuegodelColgado {
 					for (int i = 0; i < numeroJugadores; i++) {
 						if (roundwinner != -1) break;
 						
-						System.out.println("Plabra descubierta: " + String.valueOf(palabraOculta));
+						System.out.println("Palabra descubierta: " + String.valueOf(palabraOculta));
 						System.out.println("Le toca a " + Jugadores[i] + "-Vidas que le quedan: " + vidas);
 						System.out.print("Introduce una letra: ");
 						char caracter = a.nextLine().toLowerCase().charAt(0);
 				//----------------------------------------------------------------------------------------------
+						
+						boolean correcto = false;
+						for (int j = 0; j < palabraAmnesia.length(); j++) {
+							if (palabraAmnesia.charAt(j) == caracter) {
+								palabraOculta[j] = caracter;
+								correcto = true;
+								
+							}
+						}
+						
+						if (correcto) {
+							System.out.println("Acertaste crack");
+						} else {
+							System.out.println("Fallaste paquete");
+							vidas--;
+						}
+						
+						if (String.valueOf(palabraOculta).equals(palabraAmnesia)) {
+							roundwinner = i;
+							puntuacion[i]++;
+							System.out.println("$" + Jugadores[i] + "Gano la ronda$");
+							break;
+						//----------------------------------------------------------------------------------------
+						
+						
+						
+						
 						
 					}
 				}
