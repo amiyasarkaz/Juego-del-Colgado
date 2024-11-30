@@ -10,10 +10,12 @@ public class JuegodelColgado {
 		Scanner a = new Scanner(System.in);
 		
 		
-		System.out.println("Este es el Juego del Colgado");
+		System.out.println("$Este es el Juego del Colgado$");
+		System.out.println("  ");
 		//Primero pedimos el numero de jugadores que jugaran
-		System.out.print("Introduce el numero de personas que van a jugar, el minimo son 2");
+		System.out.print("Introduce el numero de personas que van a jugar, el minimo son 2: ");
 		int numeroJugadores = a.nextInt();
+		a.nextLine();
 		
 		String[] Jugadores = new String[numeroJugadores];
 		for (int i = 0; i < numeroJugadores; i++) {
@@ -21,8 +23,9 @@ public class JuegodelColgado {
 			
 		}
 	        //Preguntamos el numero de rondas que se jugaran
-			System.out.print("Cuantas rondas se van a jugar?");
+			System.out.print("Cuantas rondas se van a jugar? "); System.out.println("  ");
 			int numeroRondas = a.nextInt();
+			a.nextLine();
 			
 			int[] puntuacion = new int[numeroJugadores];
 			
@@ -30,7 +33,6 @@ public class JuegodelColgado {
 			for (int ronda = 1; ronda <= numeroRondas; ronda++) {
 				System.out.println("-Ronda" + ronda + "-");
 				System.out.print("Introduce la palabra para adivinar, Endministrator: ");
-				
 				String palabraAmnesia = a.nextLine().toLowerCase();
 				
 				//Esto cambiara la palabra introducida por guiones bajos
@@ -45,10 +47,14 @@ public class JuegodelColgado {
 				while (roundwinner == -1 && vidas > 0) {
 					for (int i = 0; i < numeroJugadores; i++) {
 						if (roundwinner != -1) break;
+					
 						
-						System.out.println("Palabra descubierta: " + String.valueOf(palabraOculta));
-						System.out.println("Le toca a " + Jugadores[i] + "-Vidas que le quedan: " + vidas);
-						System.out.print("Introduce una letra: ");
+						System.out.println("Palabra oculta: " + String.valueOf(palabraOculta));
+						System.out.println("  ");
+						System.out.println("Le toca a " + Jugadores[i] + "- Vidas que le quedan: " + vidas);
+						System.out.print("Introduce una letra: "); System.out.println("  ");
+						
+								
 						char caracter = a.nextLine().toLowerCase().charAt(0);
 						
 						//un boolean para definir si la letra que se ha escrito es parte de la palabra oculta
@@ -108,4 +114,5 @@ public class JuegodelColgado {
 		
 	}
 
-}
+	}
+	
