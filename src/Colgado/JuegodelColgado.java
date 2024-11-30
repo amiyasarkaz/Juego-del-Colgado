@@ -72,20 +72,33 @@ public class JuegodelColgado {
 							puntuacion[i]++;
 							System.out.println("$" + Jugadores[i] + "Gano la ronda$");
 							break;
-						//----------------------------------------------------------------------------------------
-						
-						
-						
-						
+						}
 						
 					}
+					
 				}
-				
-				
-				
-				
-				
-				
+				//----------------------------------------------------------------------------------------
+						
+				if (roundwinner == -1) {
+					System.out.println("No se ha adivinado la palabra paquetes, esta es la palabra: " + palabraAmnesia);
+							
+				}	
+			}
+			
+			System.out.println("---Resultado---");
+			int puntuacionTotal = 0;
+			for (int i = 0; i < numeroJugadores; i++) {
+				System.out.println(Jugadores[i] + ":" + puntuacion[i] + "Puntos");
+				if (puntuacion[i] > puntuacionTotal) {
+					puntuacionTotal = puntuacion[i];
+						
+			}
+		}
+		
+		System.out.println("The winner is:");
+		for (int i = 0; i < numeroJugadores; i++) {
+			if (puntuacion[i] == puntuacionTotal) {
+				System.out.println(Jugadores[i]);
 				
 				
 			}
