@@ -19,6 +19,7 @@ public class JuegodelColgado {
 		for (int i = 0; i < numeroJugadores; i++) {
 			Jugadores[i] = "Jugador" + (i + 1);
 			
+		}
 		//	------------------------------------------------------------------------------------------------
 			System.out.print("Cuantas rondas se van a jugar?");
 			int numeroRondas = a.nextInt();
@@ -29,8 +30,36 @@ public class JuegodelColgado {
 				System.out.println("-Ronda" + ronda + "-");
 				System.out.print("Introduce la palabra para adivinar, Endministrator: ");
 				
-				String palabraOculta = a.nextLine().toLowerCase();
+				String palabraAmnesia = a.nextLine().toLowerCase();
 			//------------------------------------------------------------------------------------------------	
+				
+				char[] palabraOculta = new char[palabraAmnesia.length()];
+				for (int i = 0; i < palabraOculta.length; i++) {
+					palabraOculta[i] = '_';
+				}
+				
+				int roundwinner = -1;
+				int vidas = 6;
+				
+				while (roundwinner == -1 && vidas > 0) {
+					for (int i = 0; i < numeroJugadores; i++) {
+						if (roundwinner != -1) break;
+						
+						System.out.println("Plabra descubierta: " + String.valueOf(palabraOculta));
+						System.out.println("Le toca a " + Jugadores[i] + "-Vidas que le quedan: " + vidas);
+						System.out.print("Introduce una letra: ");
+						char caracter = a.nextLine().toLowerCase().charAt(0);
+				//----------------------------------------------------------------------------------------------
+						
+					}
+				}
+				
+				
+				
+				
+				
+				
+				
 				
 			}
 		}
