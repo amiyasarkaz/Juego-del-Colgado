@@ -19,6 +19,20 @@ public class JuegodelColgado {
 		for (int i = 0; i < numeroJugadores; i++) {
 			Jugadores[i] = "Jugador" + (i + 1);
 			
+		//	------------------------------------------------------------------------------------------------
+			System.out.print("Cuantas rondas se van a jugar?");
+			int numeroRondas = a.nextInt();
+			
+			int[] puntuacion = new int[numeroJugadores];
+			
+			for (int ronda = 1; ronda <=numeroRondas; ronda++) {
+				System.out.println("-Ronda" + ronda + "-");
+				System.out.print("Introduce la palabra para adivinar, Endministrator: ");
+				
+				String palabraOculta = a.nextLine().toLowerCase();
+			//------------------------------------------------------------------------------------------------	
+				
+			}
 		}
 		
 		
